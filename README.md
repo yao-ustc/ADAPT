@@ -2,19 +2,13 @@
 
 <div align="center">
 
-**ECCV 2026** &nbsp; | &nbsp; [Paper]() &nbsp; | &nbsp; [arXiv]() &nbsp; | &nbsp; [Project Page]()
-
-[![ECCV 2026](https://img.shields.io/badge/ECCV-2026-blue)]()
+**ECCV 2026**
 
 </div>
 
 Official implementation of the ECCV 2026 paper **"ADAPT: Attention Dynamics Alignment with Preference Tuning for Faithful MLLMs"** by Zhiyuan Yao, Zheren Fu, Zhixiao Zheng, Jiajun Li, Yi Tu, and Zhendong Mao.
 
 ---
-
-## Abstract
-
-Multimodal Large Language Models (MLLMs) are critically hampered by hallucination—generating content inconsistent with the provided image. In this paper, we identify an internal signature of hallucination: progressive degradation of text-to-image cross-attention during generation, leading to specific failure patterns like unfocused or biased attention. Existing mitigation strategies are largely outcome-driven and do not explicitly target this failure mode. To address this, we propose **ADAPT**, an attention-based framework that intervenes directly on text-to-image cross-attention dynamics. ADAPT comprises three key contributions: (1) a cross-attention visual anchor refined from early decoding to provide stable spatial grounding, (2) an attention-supervised inference mechanism that detects and corrects attention drift online, and (3) a Visual Attention Guidance DPO that aligns preferences toward visually grounded responses. Experiments show ADAPT reduces hallucination rates by 40–60% across mainstream backbones while preserving general multimodal capabilities.
 
 ## Motivation
 
