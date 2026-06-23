@@ -10,5 +10,7 @@ build/
 *.jpg
 *.png
 *.pdf
+!image/*.png
+!image/*.jpg
 .idea/
 .vscode/
