@@ -99,13 +99,25 @@ ADAPT/
 
 ## Installation
 
+### Prerequisites
+
+ADAPT requires a working LLaVA environment. Install LLaVA first:
+
+```bash
+git clone https://github.com/haotian-liu/LLaVA.git
+cd LLaVA
+pip install -e .
+```
+
+### Install ADAPT
+
 ```bash
 git clone https://github.com/yao-ustc/ADAPT.git
 cd ADAPT
 pip install -e .
 ```
 
-ADAPT requires a working LLaVA environment (model, tokenizer, image processor). The code has been tested with LLaVA-v1.5-7B/13B and Qwen2.5-VL-3B/7B.
+The code has been tested with LLaVA-v1.5-7B/13B and Qwen2.5-VL-3B/7B.
 
 ## Quick Start
 
