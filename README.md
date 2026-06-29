@@ -88,7 +88,9 @@ ADAPT/
 │   ├── inference.py       # AMC scoring and attention steering operator
 │   └── utils.py           # Image I/O and tensor conversion utilities
 ├── eval/
-│   └── run_amber.py       # AMBER benchmark evaluation with ADAPT
+│   ├── run_VE_image.py    # Convert any image to Visual Enhanced (VE) image
+│   ├── test_images/       # Sample test images
+│   └── results/           # Output VE images and anchor heatmaps
 ├── examples/
 │   └── demo.py            # Single image-question inference demo
 ├── image/                 # Paper figures
@@ -164,25 +166,38 @@ refine_cross_attention_anchor(
 ## Demo
 
 ```bash
-python examples/demo.py \
+# Basic demo: generate VE image
+python eval/run_VE_image.py \
     --model-path liuhaotian/llava-v1.5-7b \
     --image path/to/image.jpg \
     --question "Describe this image in detail." \
-    --mode quality \
-    --save-anchor anchor_output.jpg
+    --output-ve ve_output.jpg \
+    --gpu 0
+
+# With reduced edge penalty and anchor heatmap
+python eval/run_VE_image.py \
+    --model-path liuhaotian/llava-v1.5-7b \
+    --image path/to/image.jpg \
+    --question "What objects are in this image?" \
+    --output-ve results/ve_output.jpg \
+    --save-anchor-raw results/anchor.png \
+    --gpu 0 \
+    --boundary-penalty-strength 0.5 \
+    --boundary-penalty-threshold 0.9 \
+    --edge-halving-factor 0.8
 ```
 
-## AMBER Benchmark Evaluation
+## VE Image Generation
+
+ADAPT can convert any image into a **Visual Enhanced (VE) image**, which overlays the cross-attention anchor heatmap onto the original image. High-attention regions remain clear while low-attention regions fade to white, making the model's visual grounding instantly visible.
 
 ```bash
-python -m eval.run_amber \
-    --model-path liuhaotian/llava-v1.5-7b \
-    --image-folder /path/to/AMBER/images \
-    --question-file /path/to/AMBER/questions.json \
-    --answers-file ./results/amber_results.jsonl \
-    --use-adapt \
-    --mode quality \
-    --adaptive-k1 0.4
+python eval/run_VE_image.py \
+    --model-path /path/to/llava-v1.5-7b \
+    --image input.jpg \
+    --question "Describe this image in detail." \
+    --output-ve output_ve.jpg \
+    --gpu 0
 ```
 
 ![Qualitative examples of ADAPT attention supervision](image/4.png)

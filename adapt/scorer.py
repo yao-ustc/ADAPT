@@ -262,12 +262,16 @@ def calculate_attention_layer_weights(
 
     # Softmax with temperature scaling
     vals = torch.tensor(list(raw_scores.values()), dtype=torch.float32)
-    if vals.numel() > 0 and vals.max() > 0:
+    n_layers = vals.numel()
+    if n_layers > 0 and vals.max() > 0:
         vals = torch.exp(vals * cfg.FREQ_MATCH_SCALING_FACTOR)
         vals = vals / vals.sum()
         for i, k in enumerate(raw_scores):
             raw_scores[k] = vals[i].item()
-    elif vals.numel() == 1:
-        raw_scores[list(raw_scores.keys())[0]] = 1.0 if vals[0] > 0 else 0.0
+    else:
+        # Fallback: distribute weights uniformly when all quality scores are zero
+        uniform = 1.0 / max(n_layers, 1)
+        for k in raw_scores:
+            raw_scores[k] = uniform
 
     return raw_scores
