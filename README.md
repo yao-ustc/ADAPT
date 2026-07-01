@@ -1,16 +1,17 @@
-# ADAPT: Attention Dynamics Alignment with Preference Tuning for Faithful MLLMs
-
 <div align="center">
+<h1> ADAPT: Attention Dynamics Alignment with Preference Tuning for Faithful MLLMs (ECCV 2026) </h1>
 
-**ECCV 2026**
+<a href="https://arxiv.org/abs/2606.31054"><img src="https://img.shields.io/badge/arXiv-2606.31054-red"></a>
+<a href="https://github.com/yao-ustc/ADAPT"><img src="https://img.shields.io/badge/Github-Project page-blue" alt="Project Page"></a>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2606.31054-b31b1b.svg)](https://arxiv.org/abs/2606.31054)
+**Zhiyuan Yao**<sup>1</sup>, **Zheren Fu**<sup>1</sup>, **Zhixiao Zheng**<sup>1</sup>, **Jiajun Li**<sup>2</sup>, **Yi Tu**<sup>2</sup>, and **Zhendong Mao**<sup>1,*</sup>
+
+<sup>1</sup> University of Science and Technology of China &nbsp;&nbsp;  
+<sup>2</sup> Huawei Technologies Ltd  
 
 </div>
 
-Official implementation of the ECCV 2026 paper **"ADAPT: Attention Dynamics Alignment with Preference Tuning for Faithful MLLMs"** by Zhiyuan Yao, Zheren Fu, Zhixiao Zheng, Jiajun Li, Yi Tu, and Zhendong Mao.
 
----
 
 ## Motivation
 
