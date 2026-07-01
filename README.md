@@ -4,6 +4,8 @@
 
 **ECCV 2026**
 
+[![arXiv](https://img.shields.io/badge/arXiv-2606.31054-b31b1b.svg)](https://arxiv.org/abs/2606.31054)
+
 </div>
 
 Official implementation of the ECCV 2026 paper **"ADAPT: Attention Dynamics Alignment with Preference Tuning for Faithful MLLMs"** by Zhiyuan Yao, Zheren Fu, Zhixiao Zheng, Jiajun Li, Yi Tu, and Zhendong Mao.
